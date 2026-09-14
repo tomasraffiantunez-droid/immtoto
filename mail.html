@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contáctanos</h2>
+        <!-- Usamos JavaScript para construir el enlace mailto de forma limpia -->
+        <form onsubmit="enviarCorreo(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email de contacto:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="consulta">Consulta:</label>
+                <textarea id="consulta" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Enviar Mensaje</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function enviarCorreo(event) {
+            event.preventDefault(); // Evita que la página se recargue de la forma tradicional
+
+            // 1. REEMPLAZA ESTO con tu correo electrónico real
+            const tuCorreo = "tomasraffiantunez@gmail.com"; 
+
+            // Obtenemos los valores de los inputs
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const consulta = document.getElementById('consulta').value;
+
+            // Creamos el asunto y el cuerpo del mensaje
+            const asunto = encodeURIComponent(`Nueva consulta de ${nombre}`);
+            const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nEmail de contacto: ${email}\n\nConsulta:\n${consulta}`);
+
+            // Abrimos el cliente de correo del usuario
+            window.location.href = `mailto:${tuCorreo}?subject=${asunto}&body=${cuerpo}`;
+        }
+    </script>
+
+</body>
+</html>
