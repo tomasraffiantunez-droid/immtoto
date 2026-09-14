@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo armo una PC?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header style="background-color: #2c3e50; color: white; text-align: center; padding: 25px; border-radius: 5px; margin-bottom: 15px;">
+        <h1 style="margin: 0; font-size: 32px;">¿Cómo armo una PC?</h1>
+        <h2 style="margin-top: 5px; font-weight: normal; font-size: 20px; color: #ecf0f1;">Primero veamos qué hay en una PC</h2>
+    </header>
+
+    <nav style="background-color: #00bcd4; color: white; padding: 15px; text-align: center; font-weight: bold; border-radius: 5px; margin-bottom: 15px; font-size: 18px;">
+        <span style="margin-right: 15px;">Navegación:</span>
+        <a href="gaming.html" style="color: white; text-decoration: none; margin: 0 15px;">🎮 Gaming</a> |
+        <a href="trabajo.html" style="color: white; text-decoration: none; margin: 0 15px;">💼 Trabajo</a> |
+        <a href="estudio.html" style="color: white; text-decoration: none; margin: 0 15px;">📚 Estudio</a> |
+        <a href="mail.html"style="color: white; text-decoration: none; margin: 0 15px;"> 📩 Contacto</a>
+    </nav>
+
+    <div style="display: flex; gap: 20px; margin-bottom: 15px; width: 100%;">
+        <main style="flex: 1; background-color: #ffffff; padding: 25px; border: 1px solid #ccc; border-radius: 5px;">
+            <section style="background-color: #ffffff; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #eee;">
+                <h2 style="margin-top: 0; color: #333;">Anatomía de una PC</h2>
+                <div style="text-align: center; margin-top: 15px;">
+                    <img src="anatomiapc.png" alt="">
+                </div>
+            </section>
+
+            <section style="background-color: #2ecc71; color: white; padding: 20px; border-radius: 5px;">
+                <h2 style="margin-top: 0;">¿Para qué queremos la PC?</h2>
+                <p style="line-height: 1.6; font-size: 16px;">
+                    Esto es para saber si la queremos para jugar, trabajar o estudiar.
+                    Son usos muy distintos y pueden cambiar drásticamente el precio final de la PC.
+                </p>
+                <p style="margin-top: 15px;"><strong>Elige el sector sobre el que quieres información:</strong></p>
+                <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; font-size: 18px;">
+                    <li style="margin-bottom: 10px;"><a href="gaming.html" style="color: white; font-weight: bold; text-decoration: underline;">1. Gaming</a></li>
+                    <li style="margin-bottom: 10px;"><a href="trabajo.html" style="color: white; font-weight: bold; text-decoration: underline;">2. Trabajo</a></li>
+                    <li style="margin-bottom: 10px;"><a href="estudio.html" style="color: white; font-weight: bold; text-decoration: underline;">3. Estudio</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <aside style="width: 300px; background-color: #8e44ad; color: white; padding: 20px; border-radius: 5px; flex-shrink: 0;">
+            <h3 style="margin-top: 0;">¿Necesitás ayuda?</h3>
+            <p style="line-height: 1.5;">Elegí el uso que le vas a dar a tu computadora para ver la lista recomendada de componentes e imágenes detalladas.</p>
+            <input type="text" name="" id="txtEmail">
+            <button id="btnEnviar">enviar mail</button>
+        </aside>
+    </div>
+
+    <footer style="background-color: #34495e; color: white; text-align: center; padding: 15px; border-radius: 5px;">
+        <p style="margin: 0;">Guía para armar tu PC &copy; 2026</p>
+    </footer>
+
+</body>
+<script>
+    const btn1 = document.getElementById("btnEnviar");
+    btn1.onclick = function(){
+        alert('E-mail enviado');
+    };
+</script>
+</html>
